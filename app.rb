@@ -14,14 +14,113 @@ get "/" do
 
   @markers = [
     {
-      long: "9.083", 
-      lat: "42.149", 
-      name: "Corsica"
+      long: 47.218, 
+      lat: 47.218, 
+      name: "Nantes",
+      student: 43
     }, 
     {
-      long: "7.26", 
-      lat: "43.71", 
-      name: "Nice"} 
+      long: -2.213, 
+      lat: 47.273, 
+      name: "Saint nazaire",
+      student: 1
+    },
+    {
+      long: -1.680, 
+      lat: 48.111, 
+      name: "Rennes",
+      student: 11
+    },
+    {
+      long: 0.225, 
+      lat: 49.146, 
+      name: "Lisieux",
+      student: 1
+    },
+    {
+      long: -1.265, 
+      lat: 47.161, 
+      name: "Vallet",
+      student: 1
+    },
+    {
+      long: 1.488, 
+      lat: 48.443, 
+      name: "Chartres",
+      student: 1
+    },
+    {
+      long: 5.735, 
+      lat: 45.187, 
+      name: "Grenoble",
+      student: 1
+    },
+    {
+      long: 2.351, 
+      lat: 48.856, 
+      name: "Paris",
+      student: 2
+    },
+    {
+      long: 0.340, 
+      lat: 46.580, 
+      name: "Poitiers",
+      student: 1
+    },
+    {
+      long: -2.026, 
+      lat: 47.287, 
+      name: "Paimboeuf",
+      student: 1
+    },
+    {
+      long: 3.832, 
+      lat: 49.535, 
+      name: "Montaigu",
+      student: 1
+    },
+    {
+      long: 5.447, 
+      lat: 43.529, 
+      name: "Aix-en-Provence",
+      student: 1
+    },
+    {
+      long: -1.281, 
+      lat: 47.087, 
+      name: "Clisson",
+      student: 1
+    },
+    {
+      long: -0.551, 
+      lat: 47.473, 
+      name: "Angers",
+      student: 1
+    },
+    {
+      long: -3.458, 
+      lat: 48.732, 
+      name: "Lannion",
+      student: 1
+    },
+    {
+      long: -0.772, 
+      lat: 48.071, 
+      name: "Laval",
+      student: 1
+    },
+    {
+      long: 1.444, 
+      lat: 43.604, 
+      name: "Toulouse",
+      student: 1
+    },
+    {
+      long: 0.188, 
+      lat: 48.181, 
+      name: "Teillé",
+      student: 1
+    }
   ]      
         
   @profiles = [

@@ -153,3 +153,8 @@ h3 {
   text-align: center;
   font-size: 9px;
 }
+
+#my_dataviz {
+  display: block;
+  margin: auto;
+}

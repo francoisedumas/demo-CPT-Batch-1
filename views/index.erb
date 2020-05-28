@@ -48,7 +48,7 @@
     </div>
     <div>
       <!-- Create an element where the map will take place -->
-      <svg id="my_dataviz" width="440" height="350" ></svg>
+      <svg id="my_dataviz" width="440" height="350" display="block" margin="auto"></svg>
     </div>
     <div class="footer">
       <p>
@@ -97,7 +97,8 @@
           {long: -3.83, lat: 58, name: "Morlaix"}, // Morlaix
         ];
 
-
+        // Trying to replace the list above by a list from app.rb  
+        // var markers = [<% @markers.each {|key| key} %>]
 
         // Load external data and boot
         d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson", function(data){
