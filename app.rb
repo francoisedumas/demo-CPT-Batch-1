@@ -11,6 +11,19 @@ YELLOW = "yellow"
 COLORS = [BLUE, GREEN, PURPLE, YELLOW]
 
 get "/" do
+
+  @markers = [
+    {
+      long: "9.083", 
+      lat: "42.149", 
+      name: "Corsica"
+    }, 
+    {
+      long: "7.26", 
+      lat: "43.71", 
+      name: "Nice"} 
+  ]      
+        
   @profiles = [
     {
       color: COLORS.sample,
