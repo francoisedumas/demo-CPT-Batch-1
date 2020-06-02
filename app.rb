@@ -1,4 +1,6 @@
 require "sinatra"
+# require "sinatra/reloader" #so that you don't have restart the server after changes
+require 'json'
 
 enable :static
 
