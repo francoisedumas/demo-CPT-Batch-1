@@ -1,33 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Code Pour Tou·te·s</title>
-    <link rel="icon" href="/logo.png" type="image/png" />
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Load d3.js for the map-->
-    <script src="https://d3js.org/d3.v4.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-    
-
-  </head>
   <body>
-    <div class="banner">
-      <a href="https://www.lewagon.com/fr/nantes">
-        <img src="/logo.png" alt="Logo" class="logo" width=70>
-      </a>
-      <h1>
-        <span class="red">Code</span> Pour Tou·te·s
-      </h1>
-    </div>
-    <div class="container">
-      <h2>Introducing people who code 🤘</h2>
-
       <div class="profiles">
         <% @profiles.each do |profile| %>
             <div class="profile-card">
@@ -50,19 +22,6 @@
     <div>
       <!-- Create an element where the map will take place -->
       <svg id="my_dataviz" width="440" height="350" display="block" margin="auto"></svg>
-    </div>
-    <div class="footer">
-      <p>
-        Page réalisée avec ❤️ pour la formation Code Pour Tou·te·s du
-        <a href="https://www.lewagon.com/fr/nantes">Wagon Nantes </a>
-        &
-        <a href="https://www.lewagon.com/fr/rennes">Rennes</a>
-      </p>
-    </div>
-    <div class="footer">
-        <% @markers.each do |marker| %>
-          <p >“<%=marker[:name]%>”</p>
-        <% end %>
     </div>
   </body>
 </html>
@@ -89,18 +48,7 @@
             .scale(1020)                       // This is like the zoom
             .translate([ width/2, height/2 ])
 
-        // Create data for circles:
-        // var markers = [
-        //   {long: 9.083, lat: 42.149, name: "Corsica"}, // corsica
-        //   {long: 7.26, lat: 43.71, name: "Nice"}, // nice
-        //   {long: 2.349, lat: 48.864, name: "Paris"}, // Paris
-        //   {long: -1.397, lat: 43.664, name: "Hossegor"}, // Hossegor
-        //   {long: 3.075, lat: 50.640, name: "Lille"}, // Lille
-        //   {long: -3.83, lat: 58, name: "Morlaix"}, // Morlaix
-        // ];
-
-        // Trying to replace the list above by a list from app.rb  
-        // var markers = <% @markers.each {|key| key} %>;
+        // Create data for circles passing info from Ruby to Javascript:
         var markers = [];
         $(document).ready(function(){
             markers = <%=@markers.to_json%>;
@@ -130,8 +78,8 @@
             var Tooltip = d3.select("#my_dataviz")
               .append("div")
               .attr("class", "tooltip")
-              .style("opacity", 0)
-              .style("background-color", "white")
+              .style("opacity", 1)
+              .style("background-color", "black")
               .style("border", "solid")
               .style("border-width", "2px")
               .style("border-radius", "5px")
@@ -144,14 +92,14 @@
                       .style("stroke", "black")
                       .style("opacity", 1)
                       .html("City: " + d.name)
-                      .style("left", (d3.mouse(this)[0]+30) + "px")
-                      .style("top", (d3.mouse(this)[1]+30) + "px")
+                      .style("left", (d3.mouse(this)[0]+10) + "px")
+                      .style("top", (d3.mouse(this)[1]+10) + "px")
             }
             var mousemove = function(d) {
               Tooltip
                 .html("City: " + d.name)
-                .style("left", (d3.mouse(this)[0]+30) + "px")
-                .style("top", (d3.mouse(this)[1]+30) + "px")
+                .style("left", (d3.mouse(this)[0]+10) + "px")
+                .style("top", (d3.mouse(this)[1]+10) + "px")
             }
             var mouseleave = function(d) {
               Tooltip.style("opacity", 1)
@@ -168,7 +116,7 @@
               .append("circle")
                 .attr("cx", function(d){ return projection([d.long, d.lat])[0] })
                 .attr("cy", function(d){ return projection([d.long, d.lat])[1] })
-                .attr("r", function(d){ return projection([d.student])[0]/20 })
+                .attr("r", function(d){ return projection([d.student])[0]/40 })
                 .attr("class", "circle")
                 .style("fill", "69b3a2")
                 .attr("stroke", "#69b3a2")

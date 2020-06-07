@@ -12,14 +12,20 @@ YELLOW = "yellow"
 
 COLORS = [BLUE, GREEN, PURPLE, YELLOW]
 
+
+get "/about" do
+  erb :about
+end
+
+
 get "/" do
 
   @markers = [
-    {
-      long: 47.218, 
-      lat: 47.218, 
-      name: "Nantes",
-      student: 43
+    {  
+      long: 0.225, 
+      lat: 49.146, 
+      name: "Lisieux",
+      student: 1
     }, 
     {
       long: -2.213, 
@@ -34,10 +40,11 @@ get "/" do
       student: 11
     },
     {
-      long: 0.225, 
-      lat: 49.146, 
-      name: "Lisieux",
-      student: 1
+
+      long: -1.5534, 
+      lat: 47.218, 
+      name: "Nantes",
+      student: 43
     },
     {
       long: -1.265, 

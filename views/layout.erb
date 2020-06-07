@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Code Pour Tou·te·s</title>
+    <link rel="icon" href="/logo.png" type="image/png" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Load d3.js for the map-->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    
+
+  </head>
+  <body>
+    <div class="banner">
+      <a href="https://www.lewagon.com/fr/nantes">
+        <img src="/logo.png" alt="Logo" class="logo" width=70>
+      </a>
+      <h1>
+        <span class="red">Code</span> Pour Tou·te·s
+      </h1>
+    </div>
+    <div class="container">
+      <h2>Introducing people who code 🤘</h2>
+
+
+      <%= yield %>
+
+
+    </div>
+    <div class="footer">
+      <p>
+        Page réalisée avec ❤️ pour la formation Code Pour Tou·te·s du
+        <a href="https://www.lewagon.com/fr/nantes">Wagon Nantes </a>
+        &
+        <a href="https://www.lewagon.com/fr/rennes">Rennes</a>
+      </p>
+    </div>
+  </body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
